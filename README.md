@@ -1,5 +1,4 @@
 # Python_Exercises
 
-  Python - Basic Operators
-  Sample Python Script (Ex - 02 - Operators.py)
+  Python - Basic Operators (Ex - 02 - Operators.py)
   
