@@ -24,6 +24,7 @@ counter = 100
 miles = 95.33
 name = "John"
 
+print()
 print("Counter = ", counter)
 print("Miles =", miles)
 print("Name =", name)
