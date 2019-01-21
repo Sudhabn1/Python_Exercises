@@ -13,3 +13,14 @@ name = "John"
 print("Counter = ", counter)
 print("Miles =", miles)
 print("Name =", name)
+
+
+# Multiple Assignment
+
+A = B = C = 1
+X, Y, Z = 10, 20, "Ram"
+
+print("A =", A, "| B =", B, "| C =", C)
+print("X =", X, "| Y =", Y, "| Z =", Z)
+
+print("--------------------------")
