@@ -67,3 +67,39 @@ print("Display String's characters between 18 to 27 =", sample_string[18:27])
 print("Combing 2 String values =", sample_string + " " + another_string)
 
 print("--------------------------")
+
+
+# Lists
+
+sample_list = [22, 48, "John", 2338.933, "Amar", 77733829]
+
+print("Displaying Sample List = ", sample_list)
+print("Displaying Sample List's Length =", len(sample_list))
+print("Displaying Sample List's [2] index value =", sample_list[2])
+print("Displaying Sample List's [2] to [5] index value =", sample_list[2:5])
+
+print("--------------------------")
+
+
+# Tuples
+
+sample_tuple = ('Ram', 18822819, 281.33, 94, 'Suresh', 3884.99j)
+
+print("Displaying Sample Tuple = ", sample_list)
+print("Displaying Sample Tuple's Length =", len(sample_tuple))
+print("Displaying Sample Tuple's [2] index value =", sample_tuple[2])
+print("Displaying Sample Tuple's [2] to [5] index value =", sample_tuple[2:5])
+
+print("--------------------------")
+
+
+# Dictionary
+
+sample_dictionary = {'Name': 'Ram', 'Age': 22, 'Place': 'Bangalore', 'Profession': 'Engineer'}
+
+print("Displaying Sample Dictionary =", sample_dictionary)
+print("Displaying all keys within Dictionary =", sample_dictionary.keys())
+print("Displaying value taking key into consideration =", sample_dictionary.get('Age'))
+print("Displaying length of Dictionary =", len(sample_dictionary))
+
+print("--------------------------")
