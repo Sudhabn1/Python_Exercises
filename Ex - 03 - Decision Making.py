@@ -85,3 +85,32 @@ else:
     print("It's not matching with any of the above declared names! Actual name declared =", validation_var_value)
 
 print("--------------------------")
+
+
+# Nested If Statements
+
+num = float(85)
+if num >= 0:
+    if num == 0:
+        print("Zero")
+    else:
+        print("Positive number")
+else:
+    print("Negative number")
+
+print("--------------------------")
+
+
+year = 2019
+if (year % 4) == 0:
+    if (year % 100) == 0:
+        if (year % 400) == 0:
+            print("{0} is a leap year".format(year))
+        else:
+            print("{0} is not a leap year".format(year))
+    else:
+        print("{0} is a leap year".format(year))
+else:
+    print("Yes! {0} is not a leap year".format(year))
+
+print("--------------------------")
