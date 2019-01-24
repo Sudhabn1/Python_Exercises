@@ -19,3 +19,16 @@ print("Number =", example_number, "Type =", type(example_number))
 print("Changing it to Float type :", float(example_number))
 print("Changing it to Complex type :", complex(example_number))
 print("--------------------------")
+
+
+# Mathematical Operations
+
+number1 = 2883
+number2 = 3882.048727
+number3 = 83002.38822+0J
+
+# Method abs() returns absolute value of x - the (positive) distance between x and zero
+print("Absolute Value =", abs(number1))
+print("Absolute Value =", abs(number2))
+print("Absolute Value =", abs(number3))
+print("--------------------------")
