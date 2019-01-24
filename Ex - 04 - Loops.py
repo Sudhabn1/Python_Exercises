@@ -24,5 +24,14 @@ while simple_count < 10:
     simple_count += 1
     print("Loop Executed =", simple_count)
 print("Good Bye!")
+print("--------------------------")
 
 
+another_count = 0
+while another_count < 5:
+    another_count += 1
+    print(another_count, "is the while loop's value")
+else:
+    if another_count == 5:
+        print("Ending while loop execution!")
+print("--------------------------")
