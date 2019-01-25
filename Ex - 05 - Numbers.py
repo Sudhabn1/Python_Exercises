@@ -4,6 +4,8 @@
 """
 # Printing few numbers and it's type
 
+import math
+
 sample_numbers = [453, 2819.332, -.6545+0J]
 print()
 for number_val in sample_numbers:
@@ -31,4 +33,23 @@ number3 = 83002.38822+0J
 print("Absolute Value =", abs(number1))
 print("Absolute Value =", abs(number2))
 print("Absolute Value =", abs(number3))
+
+# Method exp() returns exponential of a variable
+
+num_01 = 36
+num_02 = 21
+num_03 = 364.92
+print("Exponential Value =", math.exp(num_01))
+print("Exponential Value =", math.exp(num_02))
+print("Exponential Value =", math.exp(num_03))
+print("Exponential Value =", math.exp(math.pi))
+
+# Method floor() returns floor of x - the largest integer not greater than x
+
+number_1 = 2883
+number_2 = 82889.293811
+
+print("Floor Value =", math.floor(number_1))
+print("Floor Value =", math.floor(number_2))
+
 print("--------------------------")
