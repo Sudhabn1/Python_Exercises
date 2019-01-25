@@ -39,7 +39,7 @@ another_star_cricketer = "virat kohli"
 print("Upper Case Conversion =", new_sample_string.upper())
 print("Lower Case Conversion =", new_sample_string.lower())
 print("Capitalize Formatting =", another_star_cricketer.capitalize())
-print("String Length's =", len(new_sample_string))
+print("String's Length =", len(new_sample_string))
 print("String Size Calculation =", new_sample_string.__sizeof__())
 
 # String Operations (Strip)
