@@ -61,3 +61,16 @@ print("Is string_02 value provided is numeric? :", string_02.isnumeric())
 print("Is string_02 value provided is numeric? :", string_03.isnumeric())
 print("Is string_04 value provided is upper case? : =", string_04.isupper())
 print("--------------------------")
+
+# String Formatting
+
+default_order = "{} is a nice city! {} is really good in this city.".format('Bangalore', 'Food')
+print(default_order)
+
+positional_order = "{1} is a wonderful city! You should try {0} at least once.".format('Vada Pav', 'Mumbai')
+print(positional_order)
+
+keyword_order = "{n} is god of cricket! He bats really well against any {c} tour.".format(n='Sachin', c='Australian')
+print(keyword_order)
+
+print("--------------------------")
