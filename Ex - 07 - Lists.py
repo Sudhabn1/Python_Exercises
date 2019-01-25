@@ -26,3 +26,21 @@ print("Get Element [Uses Index Value] =", example_list.__getitem__(2))
 print("Printing Elements (Before reverse operation) =", example_list)
 example_list.reverse()
 print("Printing Elements (After reverse operation) =", example_list)
+
+print("--------------------------")
+
+# Sorting Elements
+
+need_sorting_list = [3, 9, 1, 4922, 85, 833]
+print("Displaying Results (Before sort() operations) =", need_sorting_list)
+need_sorting_list.sort()
+print("Displaying Results (After sort() operations) =", need_sorting_list)
+
+# Sorting Elements (Str & Int Items)
+
+mixed_sorting_list = [3, 9, 1, 'Ram', 'Zara', 'Amar', 4922, 85, 833.332, 'Mahesh']
+print("Displaying Results (Before sort() operations) =", mixed_sorting_list)
+mixed_sorting_list.sort(key=str)
+print("Displaying Results (After sort(key=str) operations) =", mixed_sorting_list)
+
+print("--------------------------")
