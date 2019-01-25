@@ -44,8 +44,20 @@ print("String Size Calculation =", new_sample_string.__sizeof__())
 
 # String Operations (Strip)
 print()
-string_with_whitespaces = """   Python is one of the good programming language.   """
+string_with_whitespaces = """       Python is one of the good programming language.     """
 print("String (Before Removing Whitespaces) =", string_with_whitespaces)
 print("String (After Removing Whitespaces) =", string_with_whitespaces.strip())
 
+print("--------------------------")
+
+# Generic String Operations
+
+string_01 = "New Delhi"
+string_02 = "Pin 5630021"
+string_03 = "339291002"
+string_04 = "INDIA"
+print("Is string_01 value provided is numeric? :", string_01.isnumeric())
+print("Is string_02 value provided is numeric? :", string_02.isnumeric())
+print("Is string_02 value provided is numeric? :", string_03.isnumeric())
+print("Is string_04 value provided is upper case? : =", string_04.isupper())
 print("--------------------------")
