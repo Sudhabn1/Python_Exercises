@@ -41,3 +41,11 @@ print("Lower Case Conversion =", new_sample_string.lower())
 print("Capitalize Formatting =", another_star_cricketer.capitalize())
 print("String Length's =", len(new_sample_string))
 print("String Size Calculation =", new_sample_string.__sizeof__())
+
+# String Operations (Strip)
+print()
+string_with_whitespaces = """   Python is one of the good programming language.   """
+print("String (Before Removing Whitespaces) =", string_with_whitespaces)
+print("String (After Removing Whitespaces) =", string_with_whitespaces.strip())
+
+print("--------------------------")
