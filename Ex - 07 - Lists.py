@@ -44,3 +44,16 @@ mixed_sorting_list.sort(key=str)
 print("Displaying Results (After sort(key=str) operations) =", mixed_sorting_list)
 
 print("--------------------------")
+
+# Remove & Pop Operations
+
+remove_string_elements = ['Ram', 'Zara', 'Amar', 'Mahesh', 392, 9912, 1, 49920]
+print("Before Removal Operations =", remove_string_elements)
+remove_string_elements.remove(392)
+print("Removing Element (392)")
+print("After Removal Operations =", remove_string_elements)
+print("Removing Element ('Mahesh)")
+remove_string_elements.remove('Mahesh')
+print("After Removal Operations =", remove_string_elements)
+
+print("--------------------------")
