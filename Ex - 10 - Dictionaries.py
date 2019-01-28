@@ -31,4 +31,38 @@ print("Displaying (Before modifications) =", modify_elements_dictionary)
 modify_elements_dictionary['c'] = 'Calcutta'  # Changing Value
 print("Displaying (After modifications) =", modify_elements_dictionary)
 
+delete_element_dictionary = {'Name': 'Dinesh', 'Age': 38, 'City': 'Mumbai', 'Profession': 'LIC Agent', 'Salary': 99999}
+print("Displaying Values (Before deletion) =", delete_element_dictionary)
+delete_element_dictionary.__delitem__('Salary')
+delete_element_dictionary.pop('Profession')
+print("Displaying Values (After deletion) =", delete_element_dictionary)
+
+print("--------------------------")
+
+# Generic Dictionary Operations
+
+generic_sample_dictionary = {'Name': 'Prithvi', 'Age': 28, 'City': 'Pune', 'Profession': 'Cab Driver', 'Salary': 125000}
+copied_dictionary = generic_sample_dictionary.copy()
+print("After Copying =", copied_dictionary)
+
+print("Items() Option =", generic_sample_dictionary.items())
+print("Getting Values Only =", generic_sample_dictionary.values())
+print("Getting Length =", len(generic_sample_dictionary))
+print("Getting Class Details =", generic_sample_dictionary.__class__)
+
+print("--------------------------")
+
+print("Displaying Dictionary Attributes =", dir(generic_sample_dictionary))
+print("Provide Documentation Info =", generic_sample_dictionary.__doc__)
+
+print("--------------------------")
+
+# Dictionary Comprehension
+
+square_value_dictionary = {x: x * x for x in range(20)}  # One of the important mechanism!
+print("Square Values =", square_value_dictionary)
+
+odd_or_even = {x: x % 2 == 0 for x in range(20)}
+print("Displaying Odd / Even State =", odd_or_even)
+
 print("--------------------------")
