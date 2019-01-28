@@ -38,12 +38,30 @@ greet_person(32)  # Calling greet_person function with Integer value
 
 print("--------------------------")
 
-# Sample Function (User Input)
+# Sample Function (Default Values)
 
 
-def wishing_person(name, message="Good Morning!"):
+def wishing_person(name, message="Good Morning!"):  # Message is having a default value as "Good Morning!"
     print("Hello ", name)
     print(message)
     print("Function Completed!")
 
+# Testing
 wishing_person(name='Kiran')
+wishing_person("Mahesh", "Good Evening!")  # Modifying default value of message
+
+print("--------------------------")
+
+
+# Functions (Arbitrary Arguments)
+
+def wishing_entire_members(*names):
+    for name in names:
+        print("Hey", name)
+        print("How are you? Good Morning!")
+print("Completed Execution")
+
+# Testing
+wishing_entire_members("Mahi", "Dhoni", "Virat", "Rohit")
+
+print("--------------------------")
