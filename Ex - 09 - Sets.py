@@ -28,3 +28,30 @@ print("After Invoking Sort() =", sorted(another_set))
 
 print("--------------------------")
 
+# Removing Elements
+
+remove_elements_set = {29, 381, 'Ramesh', 'Xavier', 399.9661, 99, 'Bharat'}
+print("Displaying Values (Before removal operation) =", remove_elements_set)
+remove_elements_set.remove('Xavier')
+print("Displaying Values (After removal operation) =", remove_elements_set)
+
+discard_element_set = {23379, 93381, 'Hemanth', 'Thomas', 12.9661, 9281, 'Modi'}
+print("Displaying Values (Before discard operation) =", discard_element_set)
+discard_element_set.discard('Hemanth')
+print("Displaying Values (After discard operation) =", discard_element_set)
+
+print("--------------------------")
+
+# Generic Operations
+
+yet_another_set = {'Mahesh', 'Sushma', 'Arun', 'Raja', 298891.27, 8482.J, 'Rani'}
+print("Displaying Values (Before pop() operation) =", yet_another_set)
+yet_another_set.pop()  # One element will be removed from set in a random fashion
+print("Displaying Values (After pop() operation) =", yet_another_set)
+
+one_more_set = {'Samuel', 'Maria', 'Xavier', 'Ram', 'Bharat', 'Ganesh', 2910.001, 888888, 10029, 'Eshwar'}
+print("Displaying Values (Before clear() operation) =", one_more_set)
+one_more_set.clear()
+print("Displaying Values (After clear() operation) =", one_more_set)
+
+print("--------------------------")
