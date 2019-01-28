@@ -55,3 +55,14 @@ one_more_set.clear()
 print("Displaying Values (After clear() operation) =", one_more_set)
 
 print("--------------------------")
+
+# Set Operations (Union, Intersection, Difference & Symmetric)
+
+Set_001_A = {1, 2, 3, 4, 5}
+Set_002_B = {4, 5, 6, 7, 8}
+print("Union Operation =", Set_001_A | Set_002_B)
+print("Intersection Operation =", Set_001_A & Set_002_B)
+print("Difference Operation =", Set_001_A - Set_002_B, "&", Set_002_B - Set_001_A)
+print("Symmetric Operation =", Set_001_A ^ Set_002_B)
+
+print("--------------------------")
