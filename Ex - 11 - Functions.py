@@ -52,8 +52,8 @@ wishing_person("Mahesh", "Good Evening!")  # Modifying default value of message
 
 print("--------------------------")
 
-
 # Functions (Arbitrary Arguments)
+
 
 def wishing_entire_members(*names):
     for name in names:
@@ -63,5 +63,35 @@ print("Completed Execution")
 
 # Testing
 wishing_entire_members("Mahi", "Dhoni", "Virat", "Rohit")
+
+print("--------------------------")
+
+# Recursive Functions (Function can call other functions & it's even possible for the function to call itself)
+
+
+def calculate_factorial(x):
+    if x == 1:
+        return 1
+    else:
+        return x * calculate_factorial(x-1)
+
+# Testing
+sample_value = 8
+print("Processed Factorial Function =", calculate_factorial(sample_value))  # 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1
+
+# Return Functions
+
+
+def calculate_total(*numbers):
+    total_value = 0
+    for each_number in numbers:
+        total_value += each_number
+    print(total_value)
+    return total_value
+
+print("Calculation Completed!")
+
+# Testing
+final_results = calculate_total(10, 20, 30)
 
 print("--------------------------")
