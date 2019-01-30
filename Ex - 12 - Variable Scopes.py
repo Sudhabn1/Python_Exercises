@@ -33,3 +33,17 @@ local_generic_variable_scope('Local Output')  # Here, local variable is used and
 print("Global Var =", global_variable_example)  # Here, we can directly access global variable by using print value
 
 print("--------------------------")
+
+
+injected_value = 20
+
+
+def sample_function():
+    injected_value = 10
+    print("Inside Function, Local Scope =", injected_value)
+
+# Testing
+sample_function()
+print("Outside Function, Global Scope =", injected_value)
+
+print("--------------------------")
