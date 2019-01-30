@@ -47,3 +47,20 @@ sample_function()
 print("Outside Function, Global Scope =", injected_value)
 
 print("--------------------------")
+
+
+some_value = 'Rajesh'
+print("Global Value (Before) =", some_value)
+
+
+def using_global_keyword_sample():
+    global some_value  # Using global keyword
+    some_value += ' Kumar'
+    print("Inside Function =", some_value)
+
+# Testing
+
+using_global_keyword_sample()
+print("Outside Function =", some_value)
+
+print("--------------------------")
