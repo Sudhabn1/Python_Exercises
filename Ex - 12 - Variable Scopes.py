@@ -64,3 +64,22 @@ using_global_keyword_sample()
 print("Outside Function =", some_value)
 
 print("--------------------------")
+
+
+def foo():
+    x = 20
+
+    def bar():
+        global x  # Global Keyword Logic (Within nested functions!)
+        x = 25
+    print("Before Calling bar() Function =", x)
+    print("Calling bar() Function")
+    bar()
+    print("After Calling bar() Function =", x)
+
+# Testing
+
+foo()
+print("x in main : ", x)
+
+print("--------------------------")
