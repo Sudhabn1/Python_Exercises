@@ -35,7 +35,7 @@ print("Global Var =", global_variable_example)  # Here, we can directly access g
 print("--------------------------")
 
 
-injected_value = 20
+injected_value = 20  # Same Name --> Global Variable & Local Variable
 
 
 def sample_function():
