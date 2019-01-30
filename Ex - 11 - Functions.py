@@ -95,3 +95,37 @@ print("Calculation Completed!")
 final_results = calculate_total(10, 20, 30)
 
 print("--------------------------")
+
+# Pass By Reference vs Value
+
+
+def parameter_reference_logic(_simple_list):
+    print("Reference ID - Inside Function =", id(_simple_list))
+    simple_list.append([1, 2, 3])  # Injected_Element is been appended. By this, reference remains same!
+    print("Inside Function Value =", simple_list)
+    return simple_list
+
+# Testing
+
+simple_list = [10, 20, 30]
+parameter_reference_logic(simple_list)
+print("Outside Function Value = ", simple_list)
+print("Reference ID - Outside Function =", id(simple_list))
+
+print("--------------------------")
+
+
+def parameter_ref_logic(_another_simple_list):
+    _another_simple_list = [1, 2, 3]  # Injected_Element is been modified and it's ID value also changes!
+    print("Reference ID - Inside Function =", id(_another_simple_list))
+    print("Inside Function Value =", _another_simple_list)
+    return _another_simple_list
+
+# Testing
+
+another_simple_list = [80, 90, 100]
+parameter_ref_logic(another_simple_list)
+print("Outside Function Value = ", another_simple_list)
+print("Reference ID - Outside Function =", id(another_simple_list))
+
+print("--------------------------")
