@@ -35,3 +35,15 @@ print("--------------------------")
 # While importing a module, Python looks at several places.
 # Interpreter first looks for a built-in module then (if not found) into a list of directories defined in sys.path
 print(sys.path)
+
+
+# We don't usually store all of our files in our computer in the same location.
+# We use a well-organized hierarchy of directories for easier access.
+# Similar files are kept in the same directory, for example, we may keep all the songs in the "music" directory.
+# Analogous to this, Python has packages for directories and modules for files.
+# Similar, as a directory can contain sub-directories and files, a Python package can have sub-packages and modules.
+# A directory must contain a file named __init__.py in order for Python to consider it as a package.
+# This file can be left empty but we generally place the initialization code for that package in this file.
+
+# Importing Module from Package
+# import Game.Level.start
