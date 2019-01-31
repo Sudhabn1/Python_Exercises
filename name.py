@@ -1,5 +1,5 @@
 """
-    Use this script for Python Module examples! Leverage it accordingly
+    Use this script for Python Module examples!
 """
 
 
