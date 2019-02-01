@@ -31,3 +31,10 @@ print("--------------------------")
 write_some_data = open("c:/python_write_operation.txt", 'r')
 print(write_some_data.read(65))  # Specifically displaying few characters
 write_some_data.close()
+
+# File Object Attributes
+print("Is file closed? =", write_some_data.closed)  # Returns TRUE / FALSE
+print("What is the file name? =", write_some_data.name)  # Returns Name
+print("Can we see the file buffer information? =", write_some_data.buffer)  # Returns Buffer!
+print("What is the file encoding results? =", write_some_data.encoding)  # Returns File Encoding Relevant Info
+print("--------------------------")
