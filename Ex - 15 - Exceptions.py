@@ -5,7 +5,7 @@
     b) Assertions.
 """
 
-# IO Error
+# IOError
 try:
     file_handling = open("txt")  # To test this script, give a wrong file name. You can see exception!
     file_handling.write("Modified via Script implemented for Python exceptions!")
@@ -15,7 +15,8 @@ else:
     print("Modifications are applied to this Python file, check the same")
     file_handling.close()
 
-# File Not Found Error
+
+# FileNotFoundError
 try:
     file_handling = open("txt")  # To test this script, give a wrong file name. You can see exception!
     file_handling.write("Modified via Script implemented for Python exceptions!")
@@ -24,3 +25,18 @@ except (IOError, FileNotFoundError):
 else:
     print("Modifications are applied to this Python file, check the same")
     file_handling.close()
+
+
+# ZeroDivisionError
+one_input = int(input("Enter first number = "))
+second_input = int(input("Enter second number = "))
+
+while True:
+    try:
+        print("{0} / {1} is {2}".format(one_input, second_input, one_input/second_input))
+        break
+    except ZeroDivisionError:
+
+        print("Cannot divide via Zero")
+        one_input = int(input("Enter first number = "))
+        second_input = int(input("Enter second number = "))
