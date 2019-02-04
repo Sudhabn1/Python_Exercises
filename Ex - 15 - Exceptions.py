@@ -14,3 +14,13 @@ except IOError:
 else:
     print("Modifications are applied to this Python file, check the same")
     file_handling.close()
+
+# File Not Found Error
+try:
+    file_handling = open("txt")  # To test this script, give a wrong file name. You can see exception!
+    file_handling.write("Modified via Script implemented for Python exceptions!")
+except (IOError, FileNotFoundError):
+    print("Error: Can't read the or locate the file/file path. FileNotFoundError")
+else:
+    print("Modifications are applied to this Python file, check the same")
+    file_handling.close()
