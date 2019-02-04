@@ -3,6 +3,8 @@
     More specifically, opening a file, reading from it, writing into it, closing it and various file methods.
 """
 
+import os
+
 # Opening File
 
 file_open = open("c:/python_file.txt")
@@ -38,3 +40,10 @@ print("What is the file name? =", write_some_data.name)  # Returns Name
 print("Can we see the file buffer information? =", write_some_data.buffer)  # Returns Buffer!
 print("What is the file encoding results? =", write_some_data.encoding)  # Returns File Encoding Relevant Info
 print("--------------------------")
+
+# Python Files & Directory Management
+# Import OS Module (@Start of this script)
+print("Current Working Directory =", os.getcwd())
+os.chdir("C:\\Users\\")
+print("Changing Directory Path = Done")
+print("After Changing Directory Path =", os.getcwd())
