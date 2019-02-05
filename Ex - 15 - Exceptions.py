@@ -69,3 +69,16 @@ try:
 
 except (OSError, RuntimeError):
     print("Exceptions Noticed. Check OS & SYS modules accordingly!")
+
+# IndexError
+sample_list = ['Ram', 'Sita', 'Hanuman', 'Lakshman', 100, 200, 300, 400]
+print("Sample List Length =", sample_list.__len__())
+try:
+    index_10_value = sample_list[10]
+    print("Index 10's Value =", index_10_value)
+
+    raise IndexError
+
+except IndexError as IE:
+    print("Looks like, Index error! Can the index value passed in the try block.")
+    print("Exception's Class Info =", IE.__class__)
