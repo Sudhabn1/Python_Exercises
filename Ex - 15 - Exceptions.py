@@ -84,7 +84,7 @@ except IndexError as IE:
     print("Looks like, Index error! Can the index value passed in the try block.")
     print("Exception's Class Info =", IE.__class__)
 
-# Cleanup Code (FINALLY BLOCK)
+# Cleanup Code (Using above logic again!)
 another_sample_list = [11, 22, 33, 44, 'Delhi', 'Mysore', 'Chennai', 'Pune']
 print("Another Sample List Length =", another_sample_list.__len__())
 try:
@@ -102,3 +102,45 @@ finally:
         get_index_value = another_sample_list[4]
         print("Getting Index Value =", get_index_value)
         print("Finally Block Executed !")
+
+# User Defined Exceptions
+
+
+class Error(Exception):
+    """Base class for other exceptions"""
+    pass
+
+
+class ValueTooSmallError(Error):
+    """Raised when the input value is too small"""
+    pass
+
+
+class ValueTooLargeError(Error):
+    """Raised when the input value is too large"""
+    pass
+
+# our main program
+# user guesses a number until he/she gets it right
+
+# you need to guess this number
+number = 10
+
+while True:
+    try:
+        i_num = int(input("Enter a number: "))
+        if i_num < number:
+            raise ValueTooSmallError
+        elif i_num > number:
+            raise ValueTooLargeError
+
+    except ValueTooSmallError:
+        print("This value is too small, try again!")
+        print()
+    except ValueTooLargeError:
+        print("This value is too large, try again!")
+        print()
+    finally:
+        if i_num == number:
+            print("Congratulations! You guessed it correctly.")
+            break
