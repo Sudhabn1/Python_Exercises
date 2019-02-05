@@ -36,7 +36,14 @@ while True:
         print("{0} / {1} is {2}".format(one_input, second_input, one_input/second_input))
         break
     except ZeroDivisionError:
-
         print("Cannot divide via Zero")
         one_input = int(input("Enter first number = "))
         second_input = int(input("Enter second number = "))
+
+# ValueError
+try:
+    user_age = int(input("Enter your age = "))
+    if user_age < 0 or user_age > 80:
+        raise ValueError
+except ValueError:
+    print("Invalid Age!")
