@@ -64,10 +64,11 @@ except ValueError:
 try:
     os.mkdir(":\\python_exception")  # Forcefully not giving C:\ path
     print("New Directory Created")
+    print(sys.copyright)
 
     raise (OSError, RuntimeError)
 
-except (OSError, RuntimeError):
+except (OSError, RuntimeError, SystemError):
     print("Exceptions Noticed. Check OS & SYS modules accordingly!")
 
 # IndexError
@@ -82,3 +83,22 @@ try:
 except IndexError as IE:
     print("Looks like, Index error! Can the index value passed in the try block.")
     print("Exception's Class Info =", IE.__class__)
+
+# Cleanup Code (FINALLY BLOCK)
+another_sample_list = [11, 22, 33, 44, 'Delhi', 'Mysore', 'Chennai', 'Pune']
+print("Another Sample List Length =", another_sample_list.__len__())
+try:
+    get_index_value = another_sample_list[10]
+    print("Index 10's Value =", get_index_value)
+
+    raise IndexError
+
+except IndexError as IE:
+    print("Looks like, Index error! Can the index value passed in the try block.")
+    print("Exception's Class Info =", IE.__class__)
+
+finally:
+    if IndexError:
+        get_index_value = another_sample_list[4]
+        print("Getting Index Value =", get_index_value)
+        print("Finally Block Executed !")
