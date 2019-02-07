@@ -92,7 +92,7 @@ print("Second Parrot's Singing Language =", get_parrot_02_langauage)
 
 print("--------------------------")
 
-# Inheritance
+# Inheritance OOP's Logic
 
 
 class Bird:
@@ -128,7 +128,7 @@ peggy.swim()
 
 print("--------------------------")
 
-# Encapsulation
+# Encapsulation OOP's Logic
 
 
 class Computer:
@@ -154,3 +154,40 @@ purchase_computer.model()
 purchase_computer.price(35000)  # Trying to pay 35K for this computer
 
 print("--------------------------")
+
+# Polymorphism OOP's Logic
+
+
+class Dog:
+
+    def __init__(self):
+        print("Inside Dog's Class")
+
+    def run(self):
+        print("Dogs can run!")
+
+# Child Class
+
+
+class Labrador:
+
+    def __init__(self):
+        print("Inside Labrador Class")
+
+    def run(self):
+        print("Labrador can also run quick!")
+
+
+# Common Interface
+
+
+def lets_test_running_state(any_dog):
+    any_dog.run()
+
+# Instantiation
+puppy_01 = Dog()
+puppy_02 = Labrador()
+
+# Same function, different (poly) outputs taking object instantiation mechanism
+lets_test_running_state(puppy_01)
+lets_test_running_state(puppy_02)
