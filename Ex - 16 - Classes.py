@@ -67,6 +67,11 @@ class Parrot:
         self.name = name
         self.color = color
 
+    # Instance Method
+    def sing(self, language):
+        print("Parrot sings in" + language)
+        return language
+
 parrot_01 = Parrot('Tobi', 'Grey')
 parrot_02 = Parrot('Sumo', 'Green')
 
@@ -74,3 +79,9 @@ print("Accessing First Parrot's Class Attribute =", parrot_01.species)
 print("Accessing Second Parrot's Class Attribute =", parrot_02.species)
 print("First Parrot's Name & Color =", parrot_01.name, parrot_01.color)
 print("Second Parrot's Name & Color =", parrot_02.name, parrot_02.color)
+
+# Calling Instance Methods
+get_parrot_01_langauage = parrot_01.sing('Hindi')
+get_parrot_02_langauage = parrot_02.sing('Kannada')
+print("First Parrot's Singing Language =", get_parrot_01_langauage)
+print("Second Parrot's Singing Language =", get_parrot_02_langauage)
