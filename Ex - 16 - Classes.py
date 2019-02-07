@@ -55,3 +55,22 @@ class Aircraft:
     def seating_plan(self):
         print(range(1, self._num_rows + 1), "ABCD"[:self._num_of_seats_per_row])
         return range(1, self._num_rows + 1), "ABCD"[:self._num_of_seats_per_row]
+
+
+class Parrot:
+
+    # Class Attribute
+    species = 'bird'
+
+    # Instance Attributes
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+parrot_01 = Parrot('Tobi', 'Grey')
+parrot_02 = Parrot('Sumo', 'Green')
+
+print("Accessing First Parrot's Class Attribute =", parrot_01.species)
+print("Accessing Second Parrot's Class Attribute =", parrot_02.species)
+print("First Parrot's Name & Color =", parrot_01.name, parrot_01.color)
+print("Second Parrot's Name & Color =", parrot_02.name, parrot_02.color)
