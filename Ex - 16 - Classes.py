@@ -56,6 +56,10 @@ class Aircraft:
         print(range(1, self._num_rows + 1), "ABCD"[:self._num_of_seats_per_row])
         return range(1, self._num_rows + 1), "ABCD"[:self._num_of_seats_per_row]
 
+print("--------------------------")
+
+# Generic OOP's Code
+
 
 class Parrot:
 
@@ -85,3 +89,41 @@ get_parrot_01_langauage = parrot_01.sing('Hindi')
 get_parrot_02_langauage = parrot_02.sing('Kannada')
 print("First Parrot's Singing Language =", get_parrot_01_langauage)
 print("Second Parrot's Singing Language =", get_parrot_02_langauage)
+
+print("--------------------------")
+
+# Inheritance
+
+
+class Bird:
+
+    def __init__(self):
+        print("Bird is ready!")
+
+    def who_is_this(self):
+        print("Bird")
+
+    def swim(self):
+        print("Swim Faster")
+
+# Child Class
+
+
+class Penguin(Bird):
+
+    def __init__(self):
+        super().__init__()  # Calling super function
+        print("Penguin is ready!")
+
+    def who_is_this(self):
+        print("Penguin")
+
+    def swim(self):
+        print("I can't swim faster!")
+
+# Instantiation
+peggy = Penguin()
+peggy.who_is_this()
+peggy.swim()
+
+print("--------------------------")
