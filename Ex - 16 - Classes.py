@@ -58,6 +58,7 @@ class Aircraft:
 
 print("--------------------------")
 
+
 # Generic OOP's Code
 
 
@@ -91,6 +92,7 @@ print("First Parrot's Singing Language =", get_parrot_01_langauage)
 print("Second Parrot's Singing Language =", get_parrot_02_langauage)
 
 print("--------------------------")
+
 
 # Inheritance OOP's Logic
 
@@ -128,6 +130,56 @@ peggy.swim()
 
 print("--------------------------")
 
+
+# Abstraction OOP's Logic
+
+
+class Vehicle:
+
+    def __init__(self, engine_type, color):
+        self._engine_type = engine_type
+        self._color = color
+        print("Vehicle Details = ", self, engine_type, color)
+
+    base_price = 0.0
+
+    def number_of_wheels(self, number):
+        if number == 4:
+            print("It's a 4 wheeler")
+        elif number == 2:
+            print("It's a 2 wheeler")
+        else:
+            print("You don't have proper vehicle")
+
+# Child Class
+
+
+class Bike(Vehicle):
+
+    def bike_price(self):
+        bike_price = 55000
+        return bike_price
+
+
+class Car(Vehicle):
+
+    def car_price(self):
+        car_price = 355000
+        return car_price
+
+# Instantiation
+pulsar = Bike('Petrol', 'Black')
+swift = Car('Diesel', 'Red')
+
+pulsar.number_of_wheels(2)
+print(pulsar.bike_price())
+
+swift.number_of_wheels(4)
+print(swift.car_price())
+
+print("--------------------------")
+
+
 # Encapsulation OOP's Logic
 
 
@@ -154,6 +206,7 @@ purchase_computer.model()
 purchase_computer.price(35000)  # Trying to pay 35K for this computer
 
 print("--------------------------")
+
 
 # Polymorphism OOP's Logic
 
