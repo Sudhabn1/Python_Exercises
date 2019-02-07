@@ -127,3 +127,30 @@ peggy.who_is_this()
 peggy.swim()
 
 print("--------------------------")
+
+# Encapsulation
+
+
+class Computer:
+
+    def __init__(self):
+        print("Inside Computer Class")
+        self._brand = 'Lenovo'
+
+    def model(self):
+        model = 'T440S'
+
+    def price(self, price):
+        price = 40000
+        if price > 4000:
+            print("You are planning to pay more!")
+        else:
+            print("You are planning to pay less!")
+
+# Instantiation
+
+purchase_computer = Computer()
+purchase_computer.model()
+purchase_computer.price(35000)  # Trying to pay 35K for this computer
+
+print("--------------------------")
