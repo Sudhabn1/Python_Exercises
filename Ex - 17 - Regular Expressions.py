@@ -39,3 +39,18 @@ if searchObj:
     print("search --> searchObj.group() : ", searchObj.group())
 else:
     print("Nothing found!!")
+
+print("--------------------------")
+
+# 3rd Example Search & Replace
+# Syntax - re.sub(pattern, repl, string, max=0)
+
+phone = "2004-959-559 # This is Phone Number"
+
+# Delete Python-style comments
+num = re.sub(r'#.*$', "", phone)
+print("Phone Num : ", num)
+
+# Remove anything other than digits
+num = re.sub(r'\D', "", phone)
+print("Phone Num : ", num)
