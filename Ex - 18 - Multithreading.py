@@ -36,8 +36,6 @@ try:
     threading._start_new_thread(print_time, ('Thread - 2', 4,))
 except:
     print("Error : Unable to start thread!")
-#while 1:
-#    pass
 
 
 # Example 2
