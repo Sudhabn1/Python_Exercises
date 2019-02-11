@@ -19,6 +19,7 @@
 import threading
 import time
 
+# Example 1
 # Define a function for the thread
 
 
@@ -35,5 +36,41 @@ try:
     threading._start_new_thread(print_time, ('Thread - 2', 4,))
 except:
     print("Error : Unable to start thread!")
-while 1:
-    pass
+#while 1:
+#    pass
+
+
+# Example 2
+# Define a function for the thread
+exit_flag = 0
+
+
+class MyNewThread(threading.Thread):
+
+    def __init__(self, thread_id, name, counter):
+        threading.Thread.__init__(self)
+        self._thread_id = thread_id
+        self._name = name
+        self._counter = counter
+
+    def run(self):
+        print("Starting =", self._name)
+        print_time(self._name, 5, self._counter)
+        print("Exiting =", self._name)
+
+
+def print_time(thread_name, counter, delay):
+    while counter:
+        if exit_flag:
+            thread_name.exit()
+        time.sleep(delay)
+        print("%s: %s" % (thread_name, time.ctime(time.time())))
+        counter -= 1
+
+# Create New Threads
+thread_one = MyNewThread(1, "Thread - 1", 1)
+thread_two = MyNewThread(2, "Thread - 2", 2)
+
+# Start New Threads
+thread_one.start()
+thread_two.start()
