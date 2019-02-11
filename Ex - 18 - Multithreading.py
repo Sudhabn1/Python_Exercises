@@ -28,6 +28,7 @@
 
 import threading
 import time
+import queue
 
 # Example 1
 # Define a function for the thread
@@ -97,7 +98,9 @@ class SimpleSyncThread(threading.Thread):
 
     def run(self):
         print("Starting Thread -", self._names)
+        thread_lock.acquire()
         print_time(self._names, 3, self._counters)
+        thread_lock.release()
 
 
 def printing_time(threads_name, delays, counters):
@@ -125,3 +128,69 @@ sync_threads.append(thread_02)
 for thread in sync_threads:
     thread.join()
 print("Exiting Main Thread")
+
+
+# Example 4
+# Priority Threads
+
+priority_exit_flag = 0
+
+
+class PriorityQueueThread(threading.Thread):
+
+    def __init__(self, priority_thread_id, priority_thread_name, priority_thread_queue):
+        threading.Thread.__init__(self)
+        self._priority_thread = priority_thread_id
+        self._priority_thread_name = priority_thread_name
+        self._priority_thread_queue = priority_thread_queue
+
+    def run(self):
+        print("Starting Priority Thread -", self._priority_thread_name)
+        priority_queue_process(self._priority_thread_name, self._priority_thread_queue)
+        print("Exiting Priority Thread -", self._priority_thread_name)
+
+
+def priority_queue_process(priority_thread_name, priority_thread_queue):
+    while not priority_exit_flag:
+        priority_queue_lock.acquire()
+        if not priority_work_queue.empty():
+            data = priority_thread_queue.get()
+            priority_queue_lock.release()
+            print("%s processing %s" % (priority_thread_name, data))
+        else:
+            priority_queue_lock.release()
+        time.sleep(1)
+
+
+priority_thread_list = ['Priority Thread - 1', 'Priority Thread - 2', 'Priority Thread - 3']
+namesList = ["One", "Two", "Three", "Four", "Five"]
+priority_queue_lock = threading.Lock()
+priority_work_queue = queue.Queue(10)
+priority_threads = []
+priority_thread_id = 1
+
+
+# Create 2 Threads
+for priority_threads_format_name in priority_threads:
+    priority_thread = PriorityQueueThread(priority_thread_id, priority_threads_format_name, priority_work_queue)
+    priority_thread.start()
+    priority_threads.append(priority_thread)
+    priority_thread_id += 1
+
+# Fill Queue
+priority_queue_lock.acquire()
+for word in namesList:
+    priority_work_queue.put(word)
+priority_queue_lock.release()
+
+# Wait for queue to be empty
+while not priority_work_queue.empty():
+    pass
+
+# Notify threads it's time to exit
+priority_exit_flag = 1
+
+# Wait for all threads to complete
+for pthread in priority_threads:
+    pthread.join()
+print("Exiting Priority Queue Threads")
