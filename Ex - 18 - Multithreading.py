@@ -28,8 +28,9 @@
 
 import threading
 import os
+import multiprocessing
 
-# Example 1
+# Example 1 Python Threads
 
 
 def cube_calculation(cube_number):
@@ -93,7 +94,7 @@ else:
 
 print("--------------------------")
 
-# Example 3
+# Example 3 Synchronization
 
 x_value = 0
 
@@ -133,3 +134,41 @@ if __name__ == '__main__':
     for iterator in range(10):
         main_task()
         print("Iteration {0} & X_Value = {1}".format(iterator, x_value))
+
+print("--------------------------")
+
+# Example 4 Multiprocessing
+
+
+def process_one():
+    print("ID of process_one is {}". format(os.getpid()))
+
+
+def process_two():
+    print("ID of process_two is {}".format(os.getpid()))
+
+if __name__ == '__main__':
+    print("ID of main_process is {}". format(os.getpid()))
+
+    # Creating processes
+    p1 = multiprocessing.Process(target=process_one)
+    p2 = multiprocessing.Process(target=process_two)
+
+    # Starting processes
+    p1.start()
+    p2.start()
+
+    # Process ID's
+    print("ID of p1 is : {}".format(p1.pid))
+    print("ID of p2 is : {}".format(p2.pid))
+
+    # Wait until processes are finished
+    p1.join()
+    p2.join()
+
+    # Both processes finished
+    print("Both processes finished execution!")
+
+    # Check if processes are alive
+    print("Process p1 is alive: {}".format(p1.is_alive()))
+    print("Process p2 is alive: {}".format(p2.is_alive()))
