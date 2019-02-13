@@ -92,3 +92,44 @@ else:
     print("Issues within example # 2 code!")
 
 print("--------------------------")
+
+# Example 3
+
+x_value = 0
+
+
+def increment():
+    global x_value
+    x_value += 1
+
+
+def thread_task(lock):
+    for _ in range(100000):
+        lock.acquire()
+        increment()
+        lock.release()
+
+
+def main_task():
+    global x_value
+    x_value = 0
+
+    # Creating a lock
+    lock = threading.Lock()
+
+    # Creating 2 threads
+    thread_sync_01 = threading.Thread(target=thread_task, args=(lock,))
+    thread_sync_02 = threading.Thread(target=thread_task, args=(lock,))
+
+    # Starting threads
+    thread_sync_01.start()
+    thread_sync_02.start()
+
+    # Joining 2 threads
+    thread_sync_01.join()
+    thread_sync_02.join()
+
+if __name__ == '__main__':
+    for iterator in range(10):
+        main_task()
+        print("Iteration {0} & X_Value = {1}".format(iterator, x_value))
