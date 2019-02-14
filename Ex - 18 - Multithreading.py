@@ -172,3 +172,48 @@ if __name__ == '__main__':
     # Check if processes are alive
     print("Process p1 is alive: {}".format(p1.is_alive()))
     print("Process p2 is alive: {}".format(p2.is_alive()))
+
+print("--------------------------")
+
+# Example 5 Shared Memory (Multiprocessing)
+
+
+# Function to square a given list
+
+def square_list(mylist, result, square_sum):
+    for index_value, number in enumerate(mylist):
+        print(index_value)
+        result[index_value] = number * number
+
+    # square_sum value
+    square_sum.value = sum(result)
+
+    # Print result array
+    print("Result(in process p1): {}".format(result[:]))
+
+    # Print square_sum value
+    print("Sum of squares(in process p1): {}".format(square_sum.value))
+
+if __name__ == '__main__':
+    mylist = [1, 2, 3, 4]
+
+    # Creating Array of int data type with space for 4 integers
+    result = multiprocessing.Array('i', 4)
+
+    # creating Value of int data type
+    square_sum = multiprocessing.Value('i')
+
+    # Creating a new process
+    prcs_01 = multiprocessing.Process(target=square_list, args=(mylist, result, square_sum))
+
+    # Starting process
+    prcs_01.start()
+
+    # Wait till the process is finished
+    prcs_01.join()
+
+    # Print Main program results
+    print("Result(in main program): {}".format(result[:]))
+
+    # Print square_sum value
+    print("Sum of squares(in main program): {}".format(square_sum.value))
