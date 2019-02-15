@@ -90,3 +90,39 @@ if __name__ == "__main__":
     prc2.join()
 
 print("--------------------------")
+
+
+# Example 3 Queue & Pipe
+
+
+def sender(conn, msgs):
+    for msg in msgs:
+        conn.send(msg)
+        print("Sent the message - {}".format(msg))
+    conn.close()
+
+
+def receiver(conn):
+    while 1:
+        msg = conn.recv()
+        if msg == "End":
+            break
+        print("Received the message - {}".format(msg))
+
+if __name__ == "__main__":
+    msgs = ["Hello", "Hey", "Good", "Bad", "End"]
+
+    # Creating a pipe
+    parent_conn, child_conn = multiprocessing.Pipe()
+
+    # Creating a new process
+    pr_01 = multiprocessing.Process(target=sender(parent_conn, msgs))
+    pr_02 = multiprocessing.Process(target=receiver(child_conn))
+
+    # Starting process
+    pr_01.start()
+    pr_02.start()
+
+    # Wait until processes finish
+    pr_01.join()
+    pr_02.join()
